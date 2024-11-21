@@ -103,11 +103,7 @@ def playGame():
     play = input("Do you want to play? type Y or N ")
     if(play == "Y"):
         game_status = True
-        player_name = input("Choose your username: ")
-        pause()
-        print("Hello " + player_name)
-        pause()
-        startGame(game_status, player_name)
+        startGame(game_status)
     elif play == "N":
         print("Bye")
         game_status = False
@@ -119,8 +115,11 @@ def playGame():
     return game_status
 
 # function to start game
-def startGame(game_status, player_name):
-    while(game_status):
+def startGame(game_status):
+        player_name = input("Choose your username: ")
+        pause()
+        print("Hello " + player_name)
+        pause()
         pause()
         input("Hit enter to reveal your opponent")
         num = random.randint(0, 2)
